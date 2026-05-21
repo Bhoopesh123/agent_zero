@@ -1,0 +1,38 @@
+{
+  "mcpServers": {
+    "sqlite": {
+      "command": "uvx",
+      "args": [
+        "mcp-server-sqlite",
+        "--db-path",
+        "/root/db.sqlite"
+      ],
+      "init_timeout": 10,
+      "tool_timeout": 200
+    },
+    "sequential-thinking": {
+      "disabled": false,
+      "command": "npx",
+      "args": [
+        "--yes",
+        "--package",
+        "@modelcontextprotocol/server-sequential-thinking",
+        "mcp-server-sequential-thinking"
+      ]
+    },
+    "filesystem": {
+      "command": "npx",
+	  "disabled": false,
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+		"/"
+      ]
+    },	
+    "deep-wiki": {
+      "description": "Use this MCP to analyze github repositories",
+      "url": "https://mcp.deepwiki.com/mcp",
+      "type": "streamable-http"
+    }
+  }
+}
